@@ -1,0 +1,36 @@
+<section class="container mx-auto lg:pb-[40px]">
+  <div class="flex flex-col lg:gap-[24px] lg:gap-[12px] mobile:gap-[8px]">
+    <div class="flex justify-between rounded-[30px] bg-custom-gradient relative mobile:h-[430px] mobile:relative overflow-hidden">
+      <div class="
+          lg:pt-[50px] lg:pb-[50px] lg:pl-[50px]
+          md:pt-[40px] md:pb-[40px] md:pl-[40px]
+          mobile:w-full mobile:p-[24px]
+          flex flex-col mobile:justify-between lg:gap-[94px] ">
+        <div class="flex flex-col lg:gap-[24px] lg:gap-[20px] mobile:gap-[16px] z-[9999]">
+          <h1 class="h1 text-left text-[#fff]">Автокредит <br>  под 25% годовых</h1>
+          <h3 class="b2 text-left text-[#fff]">Новые автомобили и проверенные <br> автомобили с пробегом</h3>
+        </div>
+        <button class="lg:w-[147px] mobile:w-full px-[28px] py-[18px] bg-[#fff] rounded-[14px] link text-[#262626] mobile:z-[999]">Подробнее</button>
+      </div>
+      <img class="absolute mobile:absolute lg:right-[0px] md:right-[-320px] md:bottom-0 mobile:bottom-0 mobile:z-[1]" [src]="slides[currentIndex].image" alt="Slide {{ currentIndex + 1 }}">
+    </div>
+    <div class="w-[100%] flex lg:gap-[24px] md:gap-[16px]">
+      @for(slide of slides; track slide){
+        <div class="w-[648px] flex justify-center lg:hidden">
+          <div class="w-[95%] h-[6px] rounded-[100px] bg-[#EEEEEE]"></div>
+        </div>
+        <div class="lg:w-1/3 lg:flex p-[2px] border-2 border-solid border-[#27C5D0] rounded-[20px] md:hidden sm:hidden mobile:hidden">
+          <div class="w-[100%] bg-custom-gradient rounded-[16px] flex relative overflow-hidden" [ngClass]="{'active': currentIndex === $index}" (click)="setCurrentIndex($index)">
+            <div class="flex flex-col gap-[8px] pt-[13px] pb-[16px] pl-[16px]">
+              <h3 class="b1 text-[#fff]">Автокредит  под 25% годовых</h3>
+              <h3 class="b5 w-2/3 text-[#fff] ">Новые автомобили и проверенные автомобили с пробегом</h3>
+            </div>
+            <img class="w-[172px] absolute bottom-[-7px] right-[-20px]" [src]="slide.image" alt="Slide {{ $index + 1 }}">
+          </div>
+        </div>
+      }@empty {
+        <div>There is no cards</div>
+      }
+    </div>
+  </div>
+</section>
