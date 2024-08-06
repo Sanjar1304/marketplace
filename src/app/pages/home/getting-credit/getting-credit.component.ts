@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {TranslocoPipe} from "@jsverse/transloco";
 
 @Component({
   selector: 'app-getting-credit',
   standalone: true,
-  imports: [],
+  imports: [TranslocoPipe],
   templateUrl: './getting-credit.component.html',
   styles: `
     .custom-bullets {

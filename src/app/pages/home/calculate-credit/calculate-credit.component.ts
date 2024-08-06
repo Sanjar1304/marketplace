@@ -3,6 +3,7 @@ import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {CustomCurrencyPipe} from "../../../shared/pipes/custom-currency.pipe";
+import {TranslocoPipe} from "@jsverse/transloco";
 
 @Component({
   selector: 'app-calculate-credit',
@@ -11,7 +12,8 @@ import {CustomCurrencyPipe} from "../../../shared/pipes/custom-currency.pipe";
     MatSliderModule,
     FormsModule,
     CommonModule,
-    CustomCurrencyPipe
+    CustomCurrencyPipe,
+    TranslocoPipe
   ],
   templateUrl: './calculate-credit.component.html',
   styles: `

@@ -4,19 +4,19 @@
       <img class="" src="./assets/icons/header-logo.svg" alt=""/>
       <ul class="xl:flex gap-[24px] hidden">
         <li class="">
-          <a class="b4 text-[#262626]">Частным лицам</a>
+          <a class="b4 text-[#262626]">{{"headerMenu.menuTab.for_individuals" | transloco}}</a>
         </li>
         <li class="">
-          <a class="b4 text-[#262626]">Бизнесу</a>
+          <a class="b4 text-[#262626]">{{"headerMenu.menuTab.for_business" | transloco}}</a>
         </li>
         <li class="">
-          <a class="b4 text-[#262626]">О банке</a>
+          <a class="b4 text-[#262626]">{{"headerMenu.menuTab.about_bank" | transloco}}</a>
         </li>
         <li class="">
-          <a class="b4 text-[#262626]">Контакты</a>
+          <a class="b4 text-[#262626]">{{"headerMenu.menuTab.contacts" | transloco}}</a>
         </li>
         <li class="">
-          <a class="b4 text-[#262626]">Еще</a>
+          <a class="b4 text-[#262626]">{{"headerMenu.menuTab.more" | transloco}}</a>
         </li>
       </ul>
     </div>
@@ -29,9 +29,26 @@
         </div>
         <img class="border border-solid border-[#E8E8E8] h-[38px] w-[38px] px-[10px] rounded-[10px] hidden xl:block" src="./assets/icons/lupe.svg" alt=""/>
         <img class="border border-solid border-[#E8E8E8] h-[38px] w-[38px] px-[10px] rounded-[10px]" src="./assets/icons/eye.svg" alt=""/>
-        <p class="b4 text-[#262626] border border-solid border-[#E8E8E8] h-[38px] w-[38px] px-[10px] rounded-[10px] flex items-center justify-center">RU</p>
+        <div class="">
+          <button class="b4 text-[#262626]
+                         border border-solid border-[#E8E8E8]
+                         h-[38px] w-[38px] px-[10px] rounded-[10px]
+                         flex items-center justify-center"
+                         (click)="toggleDropdown()">
+            {{ currentLocale | transloco }}
+          </button>
+          @if(dropdownOpen){
+            <div class="w-[40px] absolute z-[9999] bg-white border border-solid border-[#E8E8E8] rounded-[10px] mt-2 lang-shadow">
+              @for(lang of locales; track lang){
+                <div (click)="localeSelect(lang)" class="p-2 cursor-pointer hover:bg-gray-200 rounded-[10px]">
+                  {{ lang | transloco }}
+                </div>
+              }
+            </div>
+          }
+        </div>
       </div>
-      <button class="nav-menu text-[#fff] bg-[#27C5D0] h-[38px] py-[10px] px-[24px] rounded-[12px] flex items-center nav-menu">Войти</button>
+      <button class="nav-menu text-[#fff] bg-[#27C5D0] h-[38px] py-[10px] px-[24px] rounded-[12px] flex items-center nav-menu">{{"buttonTexts.enter" | transloco}}</button>
       <button class="h-[38px] w-[38px] flex justify-center items-center p-[5px !important] border border-1 border-[#C8C8C8] rounded-[12px] xl:hidden">
         <img class="" src="./assets/icons/hamburger.svg" alt="menu icon">
       </button>

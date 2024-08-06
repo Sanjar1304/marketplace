@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {TranslocoPipe} from "@jsverse/transloco";
 
 @Component({
   selector: 'app-question-form',
   standalone: true,
-  imports: [],
+  imports: [TranslocoPipe],
   templateUrl: './question-form.component.html',
   styles: `
      .checkbox-custom {

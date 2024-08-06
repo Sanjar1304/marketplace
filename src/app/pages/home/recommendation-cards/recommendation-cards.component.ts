@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {TranslocoPipe} from "@jsverse/transloco";
 
 @Component({
   selector: 'app-recommendation-cards',
   standalone: true,
-  imports: [],
+  imports: [TranslocoPipe],
   templateUrl: './recommendation-cards.component.html',
   styles: `
     .custom {

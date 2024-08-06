@@ -1,11 +1,13 @@
 import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {MatExpansionModule} from "@angular/material/expansion";
+import {TranslocoPipe} from "@jsverse/transloco";
 
 @Component({
   selector: 'app-faqs',
   standalone: true,
   imports: [
-    MatExpansionModule
+    MatExpansionModule,
+    TranslocoPipe
   ],
   templateUrl: './faqs.component.html',
   styles: `

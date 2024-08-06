@@ -1,11 +1,13 @@
 import {ChangeDetectionStrategy, Component, signal, ViewEncapsulation} from '@angular/core';
 import {MatExpansionModule} from "@angular/material/expansion";
+import {TranslocoPipe} from "@jsverse/transloco";
 
 @Component({
   selector: 'app-footer',
   standalone: true,
   imports: [
-    MatExpansionModule
+    MatExpansionModule,
+    TranslocoPipe
   ],
   templateUrl: './footer.component.html',
   styles: `

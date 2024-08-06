@@ -1,10 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {NgClass, NgFor} from "@angular/common";
+import {NgClass } from "@angular/common";
+import {TranslocoPipe} from "@jsverse/transloco";
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [NgFor, NgClass],
+  imports: [NgClass, TranslocoPipe],
   templateUrl: './slider.component.html',
   styles: ``,
 })
@@ -27,9 +28,9 @@ export class SliderComponent implements OnInit, OnDestroy {
   }
 
   startAutoSlide() {
-    // this.timer = setInterval(() => {
-    //   this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-    // }, this.transitionDuration);
+    this.timer = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+    }, this.transitionDuration);
   }
 
   setCurrentIndex(index: number) {
